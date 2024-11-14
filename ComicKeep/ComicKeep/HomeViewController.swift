@@ -8,7 +8,11 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBAction func randomComicBtnPressed(_ sender: UIButton) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

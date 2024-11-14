@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -31,14 +32,46 @@
                     <view key="view" contentMode="scaleToFill" id="yYz-QC-Xux">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comic Keep" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJb-zE-BgD">
+                                <rect key="frame" x="86" y="75" width="221" height="46.666666666666657"/>
+                                <fontDescription key="fontDescription" name="ComicSansMS-Bold" family="Comic Sans MS" pointSize="40"/>
+                                <color key="textColor" name="PrimaryTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7l-5D-uX0">
+                                <rect key="frame" x="97.666666666666686" y="371" width="198" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="I7l-5D-uX0" secondAttribute="height" multiplier="9:5" id="daa-36-kuF"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Random Comic!">
+                                    <fontDescription key="titleFontDescription" name="ComicSansMS-Bold" family="Comic Sans MS" pointSize="24"/>
+                                    <color key="baseForegroundColor" name="AccentColor"/>
+                                    <color key="baseBackgroundColor" name="SecondaryColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="randomComicBtnPressed:" destination="cR8-JD-BUQ" eventType="touchUpInside" id="plF-PV-qUr"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="KYZ-uz-BA4"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bJb-zE-BgD" firstAttribute="top" secondItem="yYz-QC-Xux" secondAttribute="top" constant="75" id="CaZ-bb-FSg"/>
+                            <constraint firstItem="I7l-5D-uX0" firstAttribute="centerX" secondItem="yYz-QC-Xux" secondAttribute="centerX" id="P50-eE-dLm"/>
+                            <constraint firstItem="I7l-5D-uX0" firstAttribute="centerY" secondItem="yYz-QC-Xux" secondAttribute="centerY" id="YS9-ag-v2S"/>
+                            <constraint firstItem="bJb-zE-BgD" firstAttribute="centerX" secondItem="yYz-QC-Xux" secondAttribute="centerX" id="tfv-4f-4FC"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KTN-Za-iOp"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="bJb-zE-BgD" id="JmG-Jg-GxY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hce-Rc-7gd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2100" y="-290"/>
+            <point key="canvasLocation" x="2100" y="-290.14084507042253"/>
         </scene>
         <!--Statistics View Controller-->
         <scene sceneID="3yM-dq-RZe">
@@ -211,6 +244,18 @@
         <image name="dollarsign.circle.fill" catalog="system" width="128" height="123"/>
         <image name="gearshape.fill" catalog="system" width="128" height="123"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
+        <namedColor name="AccentColor">
+            <color red="1" green="0.75686274509803919" blue="0.027450980392156862" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BackgroundColor">
+            <color red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PrimaryTextColor">
+            <color red="0.12941176470588237" green="0.12941176470588237" blue="0.12941176470588237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SecondaryColor">
+            <color red="0.050980392156862744" green="0.27843137254901962" blue="0.63137254901960782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
