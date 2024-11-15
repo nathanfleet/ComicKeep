@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		0939DF902CE6F5220002FE7F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0939DF8F2CE6F5220002FE7F /* CoreData.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		091B272D2CE4085C00B94955 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		091B27162CE4085A00B94955 /* ComicKeep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComicKeep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		091B272C2CE4085C00B94955 /* ComicKeepTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComicKeepTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		091B27362CE4085C00B94955 /* ComicKeepUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComicKeepUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0939DF8F2CE6F5220002FE7F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -65,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0939DF902CE6F5220002FE7F /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +97,7 @@
 				091B27182CE4085A00B94955 /* ComicKeep */,
 				091B272F2CE4085C00B94955 /* ComicKeepTests */,
 				091B27392CE4085C00B94955 /* ComicKeepUITests */,
+				0939DF8E2CE6F5220002FE7F /* Frameworks */,
 				091B27172CE4085A00B94955 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,6 +110,14 @@
 				091B27362CE4085C00B94955 /* ComicKeepUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		0939DF8E2CE6F5220002FE7F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0939DF8F2CE6F5220002FE7F /* CoreData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
