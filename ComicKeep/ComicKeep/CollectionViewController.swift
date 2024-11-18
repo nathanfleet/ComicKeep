@@ -15,6 +15,11 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     let sectionInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
     let minimumInteritemSpacing: CGFloat = 8
     let minimumLineSpacing: CGFloat = 8
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchComics()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,17 +33,9 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
             flowLayout.minimumLineSpacing = minimumLineSpacing
             flowLayout.estimatedItemSize = .zero
         }
-        
-        checkAndAddDummyData()
-        fetchComics()
     }
     
-    // Testing
-    func checkAndAddDummyData() {
-        if let fetchedComics = CoreDataManager.shared.fetchComics(), fetchedComics.isEmpty {
-            CoreDataManager.shared.addDummyComics()
-        }
-    }
+    
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return comics.count

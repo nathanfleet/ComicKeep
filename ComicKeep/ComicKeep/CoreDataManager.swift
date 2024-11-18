@@ -32,7 +32,7 @@ class CoreDataManager {
     // MARK: - CRUD Operations
 
     // Create
-    func createComic(title: String, issueNumber: Int16, notes: String?, variant: Bool, keyIssue: Bool, coverImage: Data?, price: Double?) -> Comic? {
+    func createComic(title: String, issueNumber: Int16, notes: String?, variant: Bool, keyIssue: Bool, coverImage: Data?, price: Double?) {
         let comic = Comic(context: context)
         comic.title = title
         comic.issueNumber = issueNumber
@@ -47,10 +47,8 @@ class CoreDataManager {
 
         do {
             try context.save()
-            return comic
         } catch {
             print("Failed to save comic: \(error)")
-            return nil
         }
     }
 
