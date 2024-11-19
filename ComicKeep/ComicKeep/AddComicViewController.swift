@@ -48,14 +48,12 @@ class AddComicViewController: UIViewController, UIImagePickerControllerDelegate,
             return
         }
 
-        // Get other fields
         let notes = notesTextView.text
         let variant = variantSwitch.isOn
         let keyIssue = keyIssueSwitch.isOn
         let price = Double(priceTextField.text ?? "") ?? 0.0
         let coverImage = selectedImageData
 
-        // Save comic to Core Data
         CoreDataManager.shared.createComic(
             title: title,
             issueNumber: issueNumber,
@@ -66,7 +64,6 @@ class AddComicViewController: UIViewController, UIImagePickerControllerDelegate,
             price: price
         )
 
-        // Dismiss the view controller
         navigationController?.popViewController(animated: true)
     }
     

@@ -13,7 +13,7 @@
         <!--Home View Controller-->
         <scene sceneID="IK7-78-HCi">
             <objects>
-                <viewController id="cR8-JD-BUQ" customClass="HomeViewController" customModule="ComicKeep" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="cR8-JD-BUQ" customClass="HomeViewController" customModule="ComicKeep" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yYz-QC-Xux">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,7 +33,7 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Random Comic!">
                                     <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="24"/>
                                     <color key="baseForegroundColor" name="AccentColor"/>
-                                    <color key="baseBackgroundColor" name="SecondaryColor"/>
+                                    <color key="baseBackgroundColor" name="SecondColor"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="randomComicBtnPressed:" destination="cR8-JD-BUQ" eventType="touchUpInside" id="plF-PV-qUr"/>
@@ -61,7 +61,7 @@
         <!--Statistics View Controller-->
         <scene sceneID="3yM-dq-RZe">
             <objects>
-                <viewController id="0Qt-vs-2Gk" customClass="StatisticsViewController" customModule="ComicKeep" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StatisticsViewController" id="0Qt-vs-2Gk" customClass="StatisticsViewController" customModule="ComicKeep" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QL1-4i-3hQ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,7 +77,7 @@
         <!--Settings View Controller-->
         <scene sceneID="eaq-Qb-Og8">
             <objects>
-                <viewController id="7KU-dq-hH5" customClass="SettingsViewController" customModule="ComicKeep" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" id="7KU-dq-hH5" customClass="SettingsViewController" customModule="ComicKeep" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fpa-jV-9cq">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,7 +93,7 @@
         <!--Wishlist View Controller-->
         <scene sceneID="8DI-3g-glY">
             <objects>
-                <viewController id="iy1-Uh-4VY" customClass="WishlistViewController" customModule="ComicKeep" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WishlistViewController" id="iy1-Uh-4VY" customClass="WishlistViewController" customModule="ComicKeep" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="28K-oq-jT0">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -109,7 +109,7 @@
         <!--Collection View Controller-->
         <scene sceneID="DMB-WE-SHr">
             <objects>
-                <collectionViewController id="TDf-rG-lwY" customClass="CollectionViewController" customModule="ComicKeep" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="CollectionViewController" id="TDf-rG-lwY" customClass="CollectionViewController" customModule="ComicKeep" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="HxV-xP-N6w">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -174,10 +174,140 @@
             </objects>
             <point key="canvasLocation" x="2100" y="-1668.3098591549297"/>
         </scene>
+        <!--Comic Details View Controller-->
+        <scene sceneID="Enf-1A-2GH">
+            <objects>
+                <viewController storyboardIdentifier="ComicDetailsViewController" id="Ngp-j4-4f4" customClass="ComicDetailsViewController" customModule="ComicKeep" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FTW-nJ-yOU">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7k-0H-NVP">
+                                <rect key="frame" x="16" y="118" width="361" height="26"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
+                                <color key="textColor" name="PrimaryTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comic Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNy-jt-tct">
+                                <rect key="frame" x="95.666666666666686" y="75" width="202" height="35"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="30"/>
+                                <color key="textColor" name="PrimaryTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Issue Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60K-go-95w">
+                                <rect key="frame" x="16" y="152" width="361" height="26"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
+                                <color key="textColor" name="PrimaryTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uxa-C6-LCM">
+                                <rect key="frame" x="16" y="186" width="361" height="26"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
+                                <color key="textColor" name="PrimaryTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Variant:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Smh-Dd-RRl">
+                                <rect key="frame" x="16" y="220" width="361" height="26"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
+                                <color key="textColor" name="PrimaryTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Key Issue:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAt-Ks-7ip">
+                                <rect key="frame" x="16" y="254" width="361" height="26"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
+                                <color key="textColor" name="PrimaryTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="bUi-Dn-hXg">
+                                <rect key="frame" x="131" y="296" width="131" height="210"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="210" id="jzR-et-7JF"/>
+                                    <constraint firstAttribute="width" secondItem="bUi-Dn-hXg" secondAttribute="height" multiplier="131:210" id="qcv-Jv-PfH"/>
+                                    <constraint firstAttribute="width" constant="131" id="xxT-i2-d1t"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pIn-Ot-aaO">
+                                <rect key="frame" x="16" y="556" width="361" height="160"/>
+                                <color key="backgroundColor" name="FirstColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="MaM-7l-rg0"/>
+                                </constraints>
+                                <color key="textColor" name="PrimaryTextColor"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View or Edit Notes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3H9-qe-KlM">
+                                <rect key="frame" x="16" y="522" width="361" height="26"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
+                                <color key="textColor" name="PrimaryTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOd-vP-NwA">
+                                <rect key="frame" x="167" y="724" width="59" height="35"/>
+                                <color key="tintColor" name="SecondColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Edit">
+                                    <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
+                                    <color key="baseForegroundColor" name="AccentColor"/>
+                                    <color key="baseBackgroundColor" name="SecondaryColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="editNotesButtonPressed:" destination="Ngp-j4-4f4" eventType="touchUpInside" id="o5t-Te-WVF"/>
+                                    <action selector="selectImageButtonTapped:" destination="lfe-PO-EQZ" eventType="touchUpInside" id="8Lb-7s-7ET"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="E6K-k5-2W2"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="E6K-k5-2W2" firstAttribute="trailing" secondItem="RAt-Ks-7ip" secondAttribute="trailing" constant="16" id="2OG-Nn-oRu"/>
+                            <constraint firstItem="Uxa-C6-LCM" firstAttribute="top" secondItem="60K-go-95w" secondAttribute="bottom" constant="8" id="7dv-jf-A6i"/>
+                            <constraint firstItem="DNy-jt-tct" firstAttribute="top" secondItem="E6K-k5-2W2" secondAttribute="top" constant="16" id="8Ng-sd-3FH"/>
+                            <constraint firstItem="E6K-k5-2W2" firstAttribute="trailing" secondItem="u7k-0H-NVP" secondAttribute="trailing" constant="16" id="9tR-SB-UU1"/>
+                            <constraint firstItem="E6K-k5-2W2" firstAttribute="trailing" secondItem="60K-go-95w" secondAttribute="trailing" constant="16" id="AMV-ES-nUW"/>
+                            <constraint firstItem="u7k-0H-NVP" firstAttribute="top" secondItem="DNy-jt-tct" secondAttribute="bottom" constant="8" id="BLq-Co-OFj"/>
+                            <constraint firstItem="E6K-k5-2W2" firstAttribute="trailing" secondItem="3H9-qe-KlM" secondAttribute="trailing" constant="16" id="Bs3-9A-gqM"/>
+                            <constraint firstItem="Uxa-C6-LCM" firstAttribute="leading" secondItem="E6K-k5-2W2" secondAttribute="leading" constant="16" id="Bwd-FG-dWi"/>
+                            <constraint firstItem="E6K-k5-2W2" firstAttribute="trailing" secondItem="Uxa-C6-LCM" secondAttribute="trailing" constant="16" id="Ipv-pG-bOi"/>
+                            <constraint firstItem="60K-go-95w" firstAttribute="leading" secondItem="E6K-k5-2W2" secondAttribute="leading" constant="16" id="J5Z-CU-DOJ"/>
+                            <constraint firstItem="E6K-k5-2W2" firstAttribute="trailing" secondItem="Smh-Dd-RRl" secondAttribute="trailing" constant="16" id="Lfz-ux-XND"/>
+                            <constraint firstItem="hOd-vP-NwA" firstAttribute="top" secondItem="pIn-Ot-aaO" secondAttribute="bottom" constant="8" id="LuZ-HZ-YKI"/>
+                            <constraint firstItem="DNy-jt-tct" firstAttribute="centerX" secondItem="FTW-nJ-yOU" secondAttribute="centerX" id="OIw-ho-dse"/>
+                            <constraint firstItem="E6K-k5-2W2" firstAttribute="trailing" secondItem="pIn-Ot-aaO" secondAttribute="trailing" constant="16" id="SZL-he-ZlW"/>
+                            <constraint firstItem="Smh-Dd-RRl" firstAttribute="leading" secondItem="E6K-k5-2W2" secondAttribute="leading" constant="16" id="T17-Hk-OCp"/>
+                            <constraint firstItem="Smh-Dd-RRl" firstAttribute="top" secondItem="Uxa-C6-LCM" secondAttribute="bottom" constant="8" id="THd-M1-hcu"/>
+                            <constraint firstItem="RAt-Ks-7ip" firstAttribute="leading" secondItem="E6K-k5-2W2" secondAttribute="leading" constant="16" id="YOu-AD-fOt"/>
+                            <constraint firstItem="RAt-Ks-7ip" firstAttribute="top" secondItem="Smh-Dd-RRl" secondAttribute="bottom" constant="8" id="Ycb-ck-xxI"/>
+                            <constraint firstItem="hOd-vP-NwA" firstAttribute="centerX" secondItem="FTW-nJ-yOU" secondAttribute="centerX" id="Z4F-7b-Ahd"/>
+                            <constraint firstItem="60K-go-95w" firstAttribute="top" secondItem="u7k-0H-NVP" secondAttribute="bottom" constant="8" id="aiS-AX-k8g"/>
+                            <constraint firstItem="pIn-Ot-aaO" firstAttribute="top" secondItem="3H9-qe-KlM" secondAttribute="bottom" constant="8" id="btY-yJ-nmo"/>
+                            <constraint firstItem="pIn-Ot-aaO" firstAttribute="leading" secondItem="E6K-k5-2W2" secondAttribute="leading" constant="16" id="fmq-FZ-w3B"/>
+                            <constraint firstItem="3H9-qe-KlM" firstAttribute="top" secondItem="bUi-Dn-hXg" secondAttribute="bottom" constant="16" id="kGi-NN-kzj"/>
+                            <constraint firstItem="bUi-Dn-hXg" firstAttribute="top" secondItem="RAt-Ks-7ip" secondAttribute="bottom" constant="16" id="lCZ-t6-nMs"/>
+                            <constraint firstItem="3H9-qe-KlM" firstAttribute="leading" secondItem="E6K-k5-2W2" secondAttribute="leading" constant="16" id="pBP-8f-gSz"/>
+                            <constraint firstItem="u7k-0H-NVP" firstAttribute="leading" secondItem="E6K-k5-2W2" secondAttribute="leading" constant="16" id="qxw-Hi-0PH"/>
+                            <constraint firstItem="bUi-Dn-hXg" firstAttribute="centerX" secondItem="FTW-nJ-yOU" secondAttribute="centerX" id="usV-0d-DsT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="coverImageView" destination="bUi-Dn-hXg" id="fd1-m2-yFG"/>
+                        <outlet property="editNotesButton" destination="hOd-vP-NwA" id="vI9-Qd-Pmy"/>
+                        <outlet property="issueNumberLabel" destination="60K-go-95w" id="cg1-ba-N9a"/>
+                        <outlet property="keyIssueLabel" destination="RAt-Ks-7ip" id="EoS-nM-BMJ"/>
+                        <outlet property="notesTextView" destination="pIn-Ot-aaO" id="Kd5-1w-ueY"/>
+                        <outlet property="priceLabel" destination="Uxa-C6-LCM" id="ATs-gm-Sq1"/>
+                        <outlet property="titleLabel" destination="u7k-0H-NVP" id="Yca-ET-2KR"/>
+                        <outlet property="variantLabel" destination="Smh-Dd-RRl" id="VZd-uV-LxD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c55-Lk-0Em" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3148.8549618320608" y="-1402.1126760563382"/>
+        </scene>
         <!--Add Comic View Controller-->
         <scene sceneID="6Yg-7L-k1D">
             <objects>
-                <viewController id="lfe-PO-EQZ" customClass="AddComicViewController" customModule="ComicKeep" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddComicViewController" id="lfe-PO-EQZ" customClass="AddComicViewController" customModule="ComicKeep" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7i9-uz-uCa">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -196,7 +326,7 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BUD-N1-42o">
                                                 <rect key="frame" x="16" y="77" width="361" height="34"/>
-                                                <color key="backgroundColor" name="PrimaryColor"/>
+                                                <color key="backgroundColor" name="FirstColor"/>
                                                 <color key="textColor" name="PrimaryTextColor"/>
                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -209,7 +339,7 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hPw-JI-kcJ">
                                                 <rect key="frame" x="16" y="517" width="361" height="34"/>
-                                                <color key="backgroundColor" name="PrimaryColor"/>
+                                                <color key="backgroundColor" name="FirstColor"/>
                                                 <color key="textColor" name="PrimaryTextColor"/>
                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -222,7 +352,7 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZhK-cI-Eqf">
                                                 <rect key="frame" x="16" y="153" width="361" height="34"/>
-                                                <color key="backgroundColor" name="PrimaryColor"/>
+                                                <color key="backgroundColor" name="FirstColor"/>
                                                 <color key="textColor" name="PrimaryTextColor"/>
                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -247,7 +377,7 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cDu-U9-1fn">
                                                 <rect key="frame" x="172" y="371" width="51" height="31"/>
-                                                <color key="onTintColor" name="SecondaryColor"/>
+                                                <color key="onTintColor" name="SecondColor"/>
                                             </switch>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="CBA-tW-GWD">
                                                 <rect key="frame" x="131" y="559" width="131" height="210"/>
@@ -259,12 +389,12 @@
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48W-uJ-Ldc">
                                                 <rect key="frame" x="127.66666666666667" y="777" width="137.66666666666663" height="35"/>
-                                                <color key="tintColor" name="SecondaryColor"/>
+                                                <color key="tintColor" name="SecondColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Select Image">
                                                     <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                                     <color key="baseForegroundColor" name="AccentColor"/>
-                                                    <color key="baseBackgroundColor" name="SecondaryColor"/>
+                                                    <color key="baseBackgroundColor" name="SecondColor"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="selectImageButtonTapped:" destination="lfe-PO-EQZ" eventType="touchUpInside" id="Lk0-Zu-1zv"/>
@@ -278,11 +408,11 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V8k-oG-TLK">
                                                 <rect key="frame" x="172" y="444" width="51" height="31"/>
-                                                <color key="onTintColor" name="SecondaryColor"/>
+                                                <color key="onTintColor" name="SecondColor"/>
                                             </switch>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GHS-Xw-YHz">
                                                 <rect key="frame" x="16" y="229" width="361" height="100"/>
-                                                <color key="backgroundColor" name="PrimaryColor"/>
+                                                <color key="backgroundColor" name="FirstColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="ZvN-CF-mko"/>
                                                 </constraints>
@@ -298,6 +428,9 @@
                                                     <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                                     <color key="baseForegroundColor" name="PrimaryTextColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="saveButtonTapped:" destination="lfe-PO-EQZ" eventType="touchUpInside" id="K63-Gr-bCt"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" name="BackgroundColor"/>
@@ -514,11 +647,14 @@
         <namedColor name="BackgroundColor">
             <color red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="PrimaryColor">
+        <namedColor name="FirstColor">
             <color red="0.90196078431372551" green="0.22352941176470589" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="PrimaryTextColor">
             <color red="0.12941176470588237" green="0.12941176470588237" blue="0.12941176470588237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SecondColor">
+            <color red="0.050980392156862744" green="0.27843137254901962" blue="0.63137254901960782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="SecondaryColor">
             <color red="0.050980392156862744" green="0.27843137254901962" blue="0.63137254901960782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

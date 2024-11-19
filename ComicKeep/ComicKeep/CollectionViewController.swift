@@ -35,8 +35,14 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         }
     }
     
-    
-    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedComic = comics[indexPath.item]
+        if let comicDetailsVC = storyboard?.instantiateViewController(withIdentifier: "ComicDetailsViewController") as? ComicDetailsViewController {
+            comicDetailsVC.comic = selectedComic
+            navigationController?.pushViewController(comicDetailsVC, animated: true)
+        }
+    }
+
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return comics.count
     }
@@ -67,22 +73,6 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
 
         return CGSize(width: itemWidth, height: itemHeight)
     }
-    
-    // MARK: Comic Details
-//    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let selectedComic = comics[indexPath.item]
-//         Navigate to Comic Detail Screen
-//         performSegue(withIdentifier: "ShowComicDetail", sender: selectedComic)
-//    }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "ShowComicDetail" {
-//            if let destinationVC = segue.destination as? ComicDetailViewController,
-//               let selectedComic = sender as? Comic {
-//                destinationVC.comic = selectedComic
-//            }
-//        }
-//    }
     
     // MARK: Data methods
     func fetchComics() {
