@@ -5,6 +5,7 @@
 //  Created by Nathan Fleet on 11/14/24.
 //
 
+import UIKit
 import Foundation
 import CoreData
 
@@ -27,11 +28,23 @@ class CoreDataManager {
     var context: NSManagedObjectContext {
         return persistentContainer.viewContext
     }
+    
+    func saveContext() {
+        let context = persistentContainer.viewContext
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
+    }
 
     // MARK: - CRUD Operations
 
     // Create
-    func createComic(title: String, issueNumber: Int16, notes: String?, variant: Bool, keyIssue: Bool, coverImage: Data?, price: Double?) -> Comic? {
+    func createComic(title: String, issueNumber: Int16, notes: String?, variant: Bool, keyIssue: Bool, coverImage: Data?, price: Double?) {
         let comic = Comic(context: context)
         comic.title = title
         comic.issueNumber = issueNumber
@@ -46,10 +59,8 @@ class CoreDataManager {
 
         do {
             try context.save()
-            return comic
         } catch {
             print("Failed to save comic: \(error)")
-            return nil
         }
     }
 
@@ -88,4 +99,33 @@ class CoreDataManager {
             return false
         }
     }
+    
+    // MARK: TESTING
+    
+    func addDummyComics() {
+            let dummyComics = [
+                ("Spider-Man", 1, false, true, "First appearance of Spider-Man", 3.99),
+                ("Batman", 50, true, false, "Anniversary issue", 4.99),
+                ("Superman", 75, false, true, "Death of Superman", 2.99),
+                ("X-Men", 1, false, true, "First issue of X-Men", 5.99),
+                ("Wonder Woman", 750, false, false, "Milestone issue", 4.99),
+                ("The Flash", 123, true, true, "First appearance of Earth-Two", 3.50),
+                ("Green Lantern", 76, false, true, "Start of the Green Lantern/Green Arrow series", 6.00),
+                ("Iron Man", 55, false, true, "First appearance of Thanos", 5.50),
+                ("Fantastic Four", 1, false, true, "First Marvel superhero team", 7.99)
+            ]
+            
+            for comicData in dummyComics {
+                let coverImage = UIImage(named: "placeholder")?.jpegData(compressionQuality: 1.0)
+                self.createComic(
+                    title: comicData.0,
+                    issueNumber: Int16(comicData.1),
+                    notes: comicData.4,
+                    variant: comicData.2,
+                    keyIssue: comicData.3,
+                    coverImage: coverImage,
+                    price: comicData.5
+                )
+            }
+        }
 }
