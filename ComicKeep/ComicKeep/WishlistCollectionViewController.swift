@@ -39,11 +39,31 @@ class WishlistCollectionViewController: UICollectionViewController, UICollection
 
     // Delegate
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //let selectedComic = wishlistComics[indexPath.item]
         let selectedComic = wishlistComics[indexPath.item]
         
-        // TODO: Navigate to Comic Details or move selection to collection
+        // Allow user to move selected comic to their collection
+        let alert = UIAlertController (
+            title: "Move to Collection",
+            message: "Would you like to Move \(selectedComic.title ?? "this comic") to your collection?",
+            preferredStyle: .alert
+        )
         
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+        alert.addAction(UIAlertAction(title: "Move", style: .default, handler: { [weak self] _ in
+            guard let self = self else { return }
+
+            selectedComic.acquired = true
+            selectedComic.wishlist = false
+
+            CoreDataManager.shared.saveContext()
+
+            self.wishlistComics.remove(at: indexPath.item)
+
+            self.collectionView.deleteItems(at: [indexPath])
+        }))
+
+        present(alert, animated: true, completion: nil)
     }
     
     // Data source

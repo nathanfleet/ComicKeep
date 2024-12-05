@@ -526,11 +526,11 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <segue destination="vV4-Ek-LkS" kind="relationship" relationship="viewControllers" id="16Q-9F-iiH"/>
+                        <segue destination="A46-wK-2Cp" kind="relationship" relationship="viewControllers" id="d6o-8L-rJR"/>
                         <segue destination="ycT-Dj-9rA" kind="relationship" relationship="viewControllers" id="sN7-LO-dsi"/>
                         <segue destination="evX-zD-alN" kind="relationship" relationship="viewControllers" id="ITP-wC-jHx"/>
                         <segue destination="2Yp-JS-iVk" kind="relationship" relationship="viewControllers" id="dR5-tC-t0Z"/>
-                        <segue destination="vV4-Ek-LkS" kind="relationship" relationship="viewControllers" id="16Q-9F-iiH"/>
-                        <segue destination="A46-wK-2Cp" kind="relationship" relationship="viewControllers" id="d6o-8L-rJR"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zIa-sz-BFj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -681,7 +681,7 @@
         <scene sceneID="HTH-RH-m7n">
             <objects>
                 <navigationController title="Wishlist" automaticallyAdjustsScrollViewInsets="NO" id="A46-wK-2Cp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="pva-u8-09g"/>
+                    <tabBarItem key="tabBarItem" title="Wishlist" image="heart.fill" catalog="system" id="pva-u8-09g"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JIK-5K-HZO">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -701,6 +701,7 @@
         <image name="books.vertical.fill" catalog="system" width="128" height="110"/>
         <image name="chart.xyaxis.line" catalog="system" width="128" height="102"/>
         <image name="gearshape.fill" catalog="system" width="128" height="123"/>
+        <image name="heart.fill" catalog="system" width="128" height="107"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="placeholder" width="374" height="463"/>
         <namedColor name="AccentColor">
