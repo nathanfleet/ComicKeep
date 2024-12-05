@@ -80,7 +80,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     
     // MARK: Data methods
     func fetchComics() {
-        if let fetchedComics = CoreDataManager.shared.fetchComics() {
+        if let fetchedComics = CoreDataManager.shared.fetchComics(acquired: true, wishlist: false) {
             comics = fetchedComics
             collectionView.reloadData()
         } else {

@@ -89,6 +89,7 @@ class AddComicViewController: UIViewController, UIImagePickerControllerDelegate,
             variant: variant,
             keyIssue: keyIssue,
             coverImage: coverImage,
+            acquired: false,
             price: price,
             wishlist: true
         )

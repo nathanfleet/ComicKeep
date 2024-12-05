@@ -90,68 +90,6 @@
             </objects>
             <point key="canvasLocation" x="2100" y="1132"/>
         </scene>
-        <!--Wishlist Collection View Controller-->
-        <scene sceneID="YJ9-qB-VJG">
-            <objects>
-                <collectionViewController storyboardIdentifier="WishlistCollectionViewController" id="ahv-AV-sKR" customClass="WishlistCollectionViewController" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="wjY-eN-lxJ">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Bzt-XF-JyR">
-                            <size key="itemSize" width="128" height="128"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WishlistComicCell" id="Qru-ek-2Bg" customClass="WishlistCollectionViewCell" customModule="ComicKeep">
-                                <rect key="frame" x="0.0" y="0.0" width="131" height="210"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ZDW-HA-5JY">
-                                    <rect key="frame" x="0.0" y="0.0" width="131" height="210"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JXb-5M-geb">
-                                            <rect key="frame" x="0.0" y="0.0" width="131" height="210"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="JXb-5M-geb" secondAttribute="height" multiplier="131:210" id="do6-II-G1N"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDR-vd-HxF">
-                                            <rect key="frame" x="5" y="8" width="126" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="JXb-5M-geb" firstAttribute="top" secondItem="ZDW-HA-5JY" secondAttribute="top" id="6lL-GZ-XBf"/>
-                                        <constraint firstItem="IDR-vd-HxF" firstAttribute="leading" secondItem="ZDW-HA-5JY" secondAttribute="leading" constant="5" id="CwB-YX-ZEq"/>
-                                        <constraint firstAttribute="trailing" secondItem="JXb-5M-geb" secondAttribute="trailing" id="F5z-fJ-Yc7"/>
-                                        <constraint firstItem="IDR-vd-HxF" firstAttribute="top" secondItem="ZDW-HA-5JY" secondAttribute="top" constant="8" id="hzO-uj-6jj"/>
-                                        <constraint firstItem="JXb-5M-geb" firstAttribute="leading" secondItem="ZDW-HA-5JY" secondAttribute="leading" id="qDM-V8-Uee"/>
-                                        <constraint firstAttribute="trailing" secondItem="IDR-vd-HxF" secondAttribute="trailing" id="xnv-ZH-Djs"/>
-                                    </constraints>
-                                </collectionViewCellContentView>
-                                <size key="customSize" width="131" height="210"/>
-                                <connections>
-                                    <outlet property="comicImageView" destination="JXb-5M-geb" id="JCL-ZH-wD8"/>
-                                    <outlet property="comicTitleLabel" destination="IDR-vd-HxF" id="M6D-9T-kdy"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="ahv-AV-sKR" id="z8j-0B-exF"/>
-                            <outlet property="delegate" destination="ahv-AV-sKR" id="LLY-Ga-gKX"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" id="Van-6H-DMp"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5TT-lO-Ov5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2100" y="-973"/>
-        </scene>
         <!--Collection View Controller-->
         <scene sceneID="DMB-WE-SHr">
             <objects>
@@ -592,7 +530,7 @@
                         <segue destination="evX-zD-alN" kind="relationship" relationship="viewControllers" id="ITP-wC-jHx"/>
                         <segue destination="2Yp-JS-iVk" kind="relationship" relationship="viewControllers" id="dR5-tC-t0Z"/>
                         <segue destination="vV4-Ek-LkS" kind="relationship" relationship="viewControllers" id="16Q-9F-iiH"/>
-                        <segue destination="oiW-bS-zEC" kind="relationship" relationship="viewControllers" id="uV1-tU-ohh"/>
+                        <segue destination="A46-wK-2Cp" kind="relationship" relationship="viewControllers" id="d6o-8L-rJR"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zIa-sz-BFj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -675,31 +613,94 @@
             </objects>
             <point key="canvasLocation" x="1172" y="-1668"/>
         </scene>
-        <!--Wishlist-->
-        <scene sceneID="gIH-Y4-uO7">
+        <!--Wishlist Collection View Controller-->
+        <scene sceneID="FNS-w5-eaN">
             <objects>
-                <navigationController title="Wishlist" automaticallyAdjustsScrollViewInsets="NO" id="oiW-bS-zEC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Wishlist" image="heart.fill" catalog="system" id="iXW-eF-G8w"/>
+                <collectionViewController storyboardIdentifier="WishlistCollectionViewController" id="Orw-Ii-cdP" customClass="WishlistCollectionViewController" customModule="ComicKeep" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="te4-Rj-T9b">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="A5D-oK-5oi">
+                            <size key="itemSize" width="131" height="210"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ComicCell" id="tcA-Qa-csa" customClass="ComicCollectionViewCell" customModule="ComicKeep" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="131" height="210"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="zad-Xy-UnR">
+                                    <rect key="frame" x="0.0" y="0.0" width="131" height="210"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e34-7f-Icn">
+                                            <rect key="frame" x="0.0" y="0.0" width="131" height="210"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="e34-7f-Icn" secondAttribute="height" multiplier="131:210" id="tmG-Ja-Xbl"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBN-Vo-gML">
+                                            <rect key="frame" x="5" y="8" width="126" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" name="PrimaryTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="e34-7f-Icn" firstAttribute="top" secondItem="zad-Xy-UnR" secondAttribute="top" id="0dq-xz-9HT"/>
+                                        <constraint firstAttribute="trailing" secondItem="e34-7f-Icn" secondAttribute="trailing" id="9pL-9R-ujm"/>
+                                        <constraint firstItem="e34-7f-Icn" firstAttribute="leading" secondItem="zad-Xy-UnR" secondAttribute="leading" id="B2E-qa-QGv"/>
+                                        <constraint firstItem="aBN-Vo-gML" firstAttribute="top" secondItem="zad-Xy-UnR" secondAttribute="top" constant="8" id="P7f-3r-RyE"/>
+                                        <constraint firstAttribute="trailing" secondItem="aBN-Vo-gML" secondAttribute="trailing" id="XMA-C7-95d"/>
+                                        <constraint firstItem="aBN-Vo-gML" firstAttribute="leading" secondItem="zad-Xy-UnR" secondAttribute="leading" constant="5" id="uMG-uB-NDi"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="131" height="210"/>
+                                <connections>
+                                    <outlet property="comicImageView" destination="e34-7f-Icn" id="X5f-GC-c8u"/>
+                                    <outlet property="comicTitleLabel" destination="aBN-Vo-gML" id="sts-OH-ZKc"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Orw-Ii-cdP" id="M5W-OO-1kU"/>
+                            <outlet property="delegate" destination="Orw-Ii-cdP" id="GEW-8I-pMD"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="wNJ-su-cL8">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="oJb-g8-Vh6"/>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9CJ-OV-wam" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2100" y="-981"/>
+        </scene>
+        <!--Wishlist-->
+        <scene sceneID="HTH-RH-m7n">
+            <objects>
+                <navigationController title="Wishlist" automaticallyAdjustsScrollViewInsets="NO" id="A46-wK-2Cp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="pva-u8-09g"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ltu-I8-x89">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JIK-5K-HZO">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="ahv-AV-sKR" kind="relationship" relationship="rootViewController" id="ag4-Df-cjy"/>
+                        <segue destination="Orw-Ii-cdP" kind="relationship" relationship="rootViewController" id="uvR-ju-Bq5"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zVY-dF-cRI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PHe-fJ-RFC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1172" y="-973"/>
+            <point key="canvasLocation" x="1173" y="-981"/>
         </scene>
     </scenes>
     <resources>
         <image name="books.vertical.fill" catalog="system" width="128" height="110"/>
         <image name="chart.xyaxis.line" catalog="system" width="128" height="102"/>
         <image name="gearshape.fill" catalog="system" width="128" height="123"/>
-        <image name="heart.fill" catalog="system" width="128" height="107"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="placeholder" width="374" height="463"/>
         <namedColor name="AccentColor">

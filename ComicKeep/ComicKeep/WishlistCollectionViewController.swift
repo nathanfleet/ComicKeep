@@ -33,13 +33,27 @@ class WishlistCollectionViewController: UICollectionViewController, UICollection
             flowLayout.sectionInset = sectionInsets
             flowLayout.minimumInteritemSpacing = minimumInteritemSpacing
             flowLayout.minimumLineSpacing = minimumLineSpacing
-            flowLayout.minimumLineSpacing = .zero
+            flowLayout.estimatedItemSize = .zero
         }
+    }
+
+    // Delegate
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //let selectedComic = wishlistComics[indexPath.item]
+        let selectedComic = wishlistComics[indexPath.item]
+        
+        // TODO: Navigate to Comic Details or move selection to collection
+        
+    }
+    
+    // Data source
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return wishlistComics.count
     }
 
     override func collectionView(_ collectionView: UICollectionView,
                                  cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WishlistComicCell", for: indexPath) as! WishlistCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ComicCell", for: indexPath) as! ComicCollectionViewCell
 
         let comic = wishlistComics[indexPath.item]
         cell.comicTitleLabel.text = comic.title
@@ -51,17 +65,6 @@ class WishlistCollectionViewController: UICollectionViewController, UICollection
         }
 
         return cell
-    }
-    
-    // Data source
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return wishlistComics.count
-    }
-
-    // Delegate
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selectedComic = wishlistComics[indexPath.item]
-        // TODO: Navigate to Comic Details or move selection to collection
     }
 
     // Flow layout
@@ -79,7 +82,7 @@ class WishlistCollectionViewController: UICollectionViewController, UICollection
     
     // MARK: Data methods
     func fetchWishlistComics() {
-        if let fetchedComics = CoreDataManager.shared.fetchComics(wishlist: true) {
+        if let fetchedComics = CoreDataManager.shared.fetchComics(acquired: false, wishlist: true) {
             wishlistComics = fetchedComics
             collectionView.reloadData()
         } else {
