@@ -362,7 +362,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x3P-QZ-hly">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="871"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="914"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Comic to Collection!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMw-CQ-RB4">
                                                 <rect key="frame" x="16.333333333333343" y="0.0" width="360.66666666666663" height="35"/>
@@ -467,10 +467,10 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HBt-O4-bE4">
-                                                <rect key="frame" x="163.33333333333334" y="820" width="66.666666666666657" height="35"/>
+                                                <rect key="frame" x="106.00000000000001" y="820" width="181.33333333333337" height="35"/>
                                                 <color key="tintColor" name="AccentColor"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Save">
+                                                <buttonConfiguration key="configuration" style="filled" title="Save to Collection">
                                                     <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                                     <color key="baseForegroundColor" name="PrimaryTextColor"/>
                                                 </buttonConfiguration>
@@ -478,10 +478,21 @@
                                                     <action selector="saveButtonTapped:" destination="lfe-PO-EQZ" eventType="touchUpInside" id="K63-Gr-bCt"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gyY-rA-EdF">
+                                                <rect key="frame" x="119.66666666666669" y="863" width="154" height="35"/>
+                                                <color key="tintColor" name="AccentColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Add to Wishlist">
+                                                    <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
+                                                    <color key="baseForegroundColor" name="PrimaryTextColor"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="addToWishlistButtonTapped:" destination="lfe-PO-EQZ" eventType="touchUpInside" id="CD5-j7-U9J"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" name="BackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="HBt-O4-bE4" secondAttribute="bottom" constant="16" id="1eh-AI-f2l"/>
                                             <constraint firstItem="a86-lK-Nc6" firstAttribute="leading" secondItem="x3P-QZ-hly" secondAttribute="leading" constant="16" id="1h8-K1-XXW"/>
                                             <constraint firstItem="hlG-5S-OP5" firstAttribute="leading" secondItem="x3P-QZ-hly" secondAttribute="leading" constant="16" id="40k-CF-JTN"/>
                                             <constraint firstItem="CBA-tW-GWD" firstAttribute="top" secondItem="hPw-JI-kcJ" secondAttribute="bottom" constant="8" id="57z-qx-kt7"/>
@@ -505,14 +516,17 @@
                                             <constraint firstItem="a86-lK-Nc6" firstAttribute="top" secondItem="x3P-QZ-hly" secondAttribute="top" constant="43" id="Naw-Ku-glG"/>
                                             <constraint firstItem="cDu-U9-1fn" firstAttribute="centerX" secondItem="x3P-QZ-hly" secondAttribute="centerX" id="NoQ-YM-bFe"/>
                                             <constraint firstItem="9yf-gd-eod" firstAttribute="top" secondItem="GHS-Xw-YHz" secondAttribute="bottom" constant="8" id="Pkj-9Y-hXo"/>
+                                            <constraint firstAttribute="bottom" secondItem="gyY-rA-EdF" secondAttribute="bottom" constant="16" id="S1H-CI-H2q"/>
                                             <constraint firstItem="48W-uJ-Ldc" firstAttribute="centerX" secondItem="x3P-QZ-hly" secondAttribute="centerX" id="S5o-Rk-Wsw"/>
                                             <constraint firstItem="mwo-QC-WVm" firstAttribute="leading" secondItem="x3P-QZ-hly" secondAttribute="leading" constant="16" id="Sfz-gw-BCo"/>
                                             <constraint firstAttribute="trailing" secondItem="mwo-QC-WVm" secondAttribute="trailing" constant="16" id="TRh-Eq-LKK"/>
+                                            <constraint firstItem="gyY-rA-EdF" firstAttribute="top" secondItem="HBt-O4-bE4" secondAttribute="bottom" constant="8" id="UCN-CR-fH6"/>
                                             <constraint firstItem="PMw-CQ-RB4" firstAttribute="centerX" secondItem="x3P-QZ-hly" secondAttribute="centerX" id="UE2-mq-7fM"/>
                                             <constraint firstItem="HBt-O4-bE4" firstAttribute="top" secondItem="48W-uJ-Ldc" secondAttribute="bottom" constant="8" id="V3H-2S-fhU"/>
                                             <constraint firstAttribute="trailing" secondItem="ZhK-cI-Eqf" secondAttribute="trailing" constant="16" id="a3m-bR-hqZ"/>
                                             <constraint firstItem="mwo-QC-WVm" firstAttribute="top" secondItem="BUD-N1-42o" secondAttribute="bottom" constant="8" id="a9t-d0-S6a"/>
                                             <constraint firstItem="ZhK-cI-Eqf" firstAttribute="top" secondItem="mwo-QC-WVm" secondAttribute="bottom" constant="8" id="ajF-8x-P9D"/>
+                                            <constraint firstItem="gyY-rA-EdF" firstAttribute="centerX" secondItem="x3P-QZ-hly" secondAttribute="centerX" id="cwM-8b-zfG"/>
                                             <constraint firstItem="VAu-gl-JEi" firstAttribute="centerX" secondItem="x3P-QZ-hly" secondAttribute="centerX" id="fx1-u0-2eE"/>
                                             <constraint firstAttribute="trailing" secondItem="a86-lK-Nc6" secondAttribute="trailing" constant="16" id="hTr-Bn-OZH"/>
                                             <constraint firstItem="BUD-N1-42o" firstAttribute="leading" secondItem="x3P-QZ-hly" secondAttribute="leading" constant="16" id="htH-6T-DYv"/>
@@ -548,6 +562,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="cvn-z8-jv4"/>
                     <connections>
+                        <outlet property="addToWishlistButton" destination="gyY-rA-EdF" id="OhJ-0F-BPJ"/>
                         <outlet property="coverImageView" destination="CBA-tW-GWD" id="k6x-0x-zjv"/>
                         <outlet property="issueNumberTextField" destination="ZhK-cI-Eqf" id="wwH-8l-kru"/>
                         <outlet property="keyIssueSwitch" destination="V8k-oG-TLK" id="9mS-gR-BsZ"/>

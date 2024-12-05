@@ -79,13 +79,11 @@ class WishlistCollectionViewController: UICollectionViewController, UICollection
     
     // MARK: Data methods
     func fetchWishlistComics() {
-        let fetchRequest: NSFetchRequest<Comic> = Comic.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "isInWishlist == %@", NSNumber(value: true))
-
-        do {
-            wishlistComics = try CoreDataManager.shared.context.fetch(fetchRequest)
-        } catch {
-            print("Error fetching wishlist comics: \(error)")
+        if let fetchedComics = CoreDataManager.shared.fetchComics(wishlist: true) {
+            wishlistComics = fetchedComics
+            collectionView.reloadData()
+        } else {
+            print("No wishlist comics found.")
         }
     }
 }

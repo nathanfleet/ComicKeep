@@ -44,7 +44,7 @@ class CoreDataManager {
     // MARK: - CRUD Operations
 
     // Create
-    func createComic(title: String, issueNumber: Int16, notes: String?, variant: Bool, keyIssue: Bool, coverImage: Data?, price: Double?) {
+    func createComic(title: String, issueNumber: Int16, notes: String?, variant: Bool, keyIssue: Bool, coverImage: Data?, price: Double?, wishlist:Bool=false) {
         let comic = Comic(context: context)
         comic.title = title
         comic.issueNumber = issueNumber
@@ -53,7 +53,7 @@ class CoreDataManager {
         comic.keyIssue = keyIssue
         comic.coverImage = coverImage
         comic.acquired = true
-        comic.wishlist = false
+        comic.wishlist = wishlist
         comic.dateAdded = Date()
         comic.price = NSDecimalNumber(value: price ?? 0.0)
 
@@ -65,8 +65,13 @@ class CoreDataManager {
     }
 
     // Read
-    func fetchComics() -> [Comic]? {
+    func fetchComics(wishlist: Bool? = nil) -> [Comic]? {
         let fetchRequest: NSFetchRequest<Comic> = Comic.fetchRequest()
+        
+        // boolean to determine wether or not to return comics in the wishlist
+        if let wishlist = wishlist {
+            fetchRequest.predicate = NSPredicate(format: "wishlist == %@", NSNumber(value: wishlist))
+        }
 
         do {
             let comics = try context.fetch(fetchRequest)
