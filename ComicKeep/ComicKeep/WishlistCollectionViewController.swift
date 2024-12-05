@@ -1,5 +1,5 @@
 //
-//  CollectionViewController.swift
+//  WishlistViewController.swift
 //  ComicKeep
 //
 //  Created by Nathan Fleet on 11/13/24.
@@ -8,9 +8,10 @@
 import UIKit
 import CoreData
 
-class CollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-    var comics: [Comic] = []
-    
+class WishlistCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+
+    var wishlistComics: [Comic] = []
+
     let itemsPerRow: CGFloat = 3
     let sectionInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
     let minimumInteritemSpacing: CGFloat = 8
@@ -18,13 +19,13 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchComics()
+        fetchWishlistComics()
         collectionView.reloadData()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         collectionView.delegate = self
         collectionView.dataSource = self
 
@@ -35,25 +36,46 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
             flowLayout.estimatedItemSize = .zero
         }
     }
-    
+
     // Delegate
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selectedComic = comics[indexPath.item]
-        if let comicDetailsVC = storyboard?.instantiateViewController(withIdentifier: "ComicDetailsViewController") as? ComicDetailsViewController {
-            comicDetailsVC.comic = selectedComic
-            navigationController?.pushViewController(comicDetailsVC, animated: true)
-        }
+        let selectedComic = wishlistComics[indexPath.item]
+        
+        // Allow user to move selected comic to their collection
+        let alert = UIAlertController (
+            title: "Move to Collection",
+            message: "Would you like to Move \(selectedComic.title ?? "this comic") to your collection?",
+            preferredStyle: .alert
+        )
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+        alert.addAction(UIAlertAction(title: "Move", style: .default, handler: { [weak self] _ in
+            guard let self = self else { return }
+
+            selectedComic.acquired = true
+            selectedComic.wishlist = false
+
+            CoreDataManager.shared.saveContext()
+
+            self.wishlistComics.remove(at: indexPath.item)
+
+            self.collectionView.deleteItems(at: [indexPath])
+        }))
+
+        present(alert, animated: true, completion: nil)
     }
     
     // Data source
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return comics.count
+        return wishlistComics.count
     }
-    
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+    override func collectionView(_ collectionView: UICollectionView,
+                                 cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ComicCell", for: indexPath) as! ComicCollectionViewCell
 
-        let comic = comics[indexPath.item]
+        let comic = wishlistComics[indexPath.item]
         cell.comicTitleLabel.text = comic.title
 
         if let imageData = comic.coverImage {
@@ -64,7 +86,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
 
         return cell
     }
-    
+
     // Flow layout
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
@@ -79,12 +101,12 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     }
     
     // MARK: Data methods
-    func fetchComics() {
-        if let fetchedComics = CoreDataManager.shared.fetchComics(acquired: true, wishlist: false) {
-            comics = fetchedComics
+    func fetchWishlistComics() {
+        if let fetchedComics = CoreDataManager.shared.fetchComics(acquired: false, wishlist: true) {
+            wishlistComics = fetchedComics
             collectionView.reloadData()
         } else {
-            print("No comics found.")
+            print("No wishlist comics found.")
         }
     }
 }

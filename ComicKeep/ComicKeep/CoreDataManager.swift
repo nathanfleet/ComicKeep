@@ -44,7 +44,7 @@ class CoreDataManager {
     // MARK: - CRUD Operations
 
     // Create
-    func createComic(title: String, issueNumber: Int16, notes: String?, variant: Bool, keyIssue: Bool, coverImage: Data?, price: Double?) {
+    func createComic(title: String, issueNumber: Int16, notes: String?, variant: Bool, keyIssue: Bool, coverImage: Data?, acquired: Bool=true, price: Double?, wishlist:Bool=false) {
         let comic = Comic(context: context)
         comic.title = title
         comic.issueNumber = issueNumber
@@ -52,8 +52,8 @@ class CoreDataManager {
         comic.variant = variant
         comic.keyIssue = keyIssue
         comic.coverImage = coverImage
-        comic.acquired = true
-        comic.wishlist = false
+        comic.acquired = acquired
+        comic.wishlist = wishlist
         comic.dateAdded = Date()
         comic.price = NSDecimalNumber(value: price ?? 0.0)
 
@@ -65,8 +65,22 @@ class CoreDataManager {
     }
 
     // Read
-    func fetchComics() -> [Comic]? {
+    func fetchComics(acquired: Bool? = nil, wishlist: Bool? = nil) -> [Comic]? {
         let fetchRequest: NSFetchRequest<Comic> = Comic.fetchRequest()
+
+        var predicates = [NSPredicate]()
+
+        if let acquired = acquired {
+            predicates.append(NSPredicate(format: "acquired == %@", NSNumber(value: acquired)))
+        }
+
+        if let wishlist = wishlist {
+            predicates.append(NSPredicate(format: "wishlist == %@", NSNumber(value: wishlist)))
+        }
+
+        if !predicates.isEmpty {
+            fetchRequest.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
+        }
 
         do {
             let comics = try context.fetch(fetchRequest)
@@ -124,7 +138,9 @@ class CoreDataManager {
                     variant: comicData.2,
                     keyIssue: comicData.3,
                     coverImage: coverImage,
-                    price: comicData.5
+                    acquired: false,
+                    price: comicData.5,
+                    wishlist: true
                 )
             }
         }

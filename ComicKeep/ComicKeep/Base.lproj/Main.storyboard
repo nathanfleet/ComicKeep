@@ -90,22 +90,6 @@
             </objects>
             <point key="canvasLocation" x="2100" y="1132"/>
         </scene>
-        <!--Wishlist View Controller-->
-        <scene sceneID="8DI-3g-glY">
-            <objects>
-                <viewController storyboardIdentifier="WishlistViewController" id="iy1-Uh-4VY" customClass="WishlistViewController" customModule="ComicKeep" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="28K-oq-jT0">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="TDZ-YQ-l3j"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="FTd-23-y6t"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xOi-tO-hOd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2100" y="-980"/>
-        </scene>
         <!--Collection View Controller-->
         <scene sceneID="DMB-WE-SHr">
             <objects>
@@ -302,7 +286,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c55-Lk-0Em" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3148.8549618320608" y="-1402.1126760563382"/>
+            <point key="canvasLocation" x="3784" y="-1668"/>
         </scene>
         <!--Add Comic View Controller-->
         <scene sceneID="6Yg-7L-k1D">
@@ -316,7 +300,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x3P-QZ-hly">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="871"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="914"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Comic to Collection!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMw-CQ-RB4">
                                                 <rect key="frame" x="16.333333333333343" y="0.0" width="360.66666666666663" height="35"/>
@@ -421,10 +405,10 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HBt-O4-bE4">
-                                                <rect key="frame" x="163.33333333333334" y="820" width="66.666666666666657" height="35"/>
+                                                <rect key="frame" x="106.00000000000001" y="820" width="181.33333333333337" height="35"/>
                                                 <color key="tintColor" name="AccentColor"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Save">
+                                                <buttonConfiguration key="configuration" style="filled" title="Save to Collection">
                                                     <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                                     <color key="baseForegroundColor" name="PrimaryTextColor"/>
                                                 </buttonConfiguration>
@@ -432,10 +416,21 @@
                                                     <action selector="saveButtonTapped:" destination="lfe-PO-EQZ" eventType="touchUpInside" id="K63-Gr-bCt"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gyY-rA-EdF">
+                                                <rect key="frame" x="119.66666666666669" y="863" width="154" height="35"/>
+                                                <color key="tintColor" name="AccentColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Add to Wishlist">
+                                                    <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
+                                                    <color key="baseForegroundColor" name="PrimaryTextColor"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="addToWishlistButtonTapped:" destination="lfe-PO-EQZ" eventType="touchUpInside" id="CD5-j7-U9J"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" name="BackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="HBt-O4-bE4" secondAttribute="bottom" constant="16" id="1eh-AI-f2l"/>
                                             <constraint firstItem="a86-lK-Nc6" firstAttribute="leading" secondItem="x3P-QZ-hly" secondAttribute="leading" constant="16" id="1h8-K1-XXW"/>
                                             <constraint firstItem="hlG-5S-OP5" firstAttribute="leading" secondItem="x3P-QZ-hly" secondAttribute="leading" constant="16" id="40k-CF-JTN"/>
                                             <constraint firstItem="CBA-tW-GWD" firstAttribute="top" secondItem="hPw-JI-kcJ" secondAttribute="bottom" constant="8" id="57z-qx-kt7"/>
@@ -459,14 +454,17 @@
                                             <constraint firstItem="a86-lK-Nc6" firstAttribute="top" secondItem="x3P-QZ-hly" secondAttribute="top" constant="43" id="Naw-Ku-glG"/>
                                             <constraint firstItem="cDu-U9-1fn" firstAttribute="centerX" secondItem="x3P-QZ-hly" secondAttribute="centerX" id="NoQ-YM-bFe"/>
                                             <constraint firstItem="9yf-gd-eod" firstAttribute="top" secondItem="GHS-Xw-YHz" secondAttribute="bottom" constant="8" id="Pkj-9Y-hXo"/>
+                                            <constraint firstAttribute="bottom" secondItem="gyY-rA-EdF" secondAttribute="bottom" constant="16" id="S1H-CI-H2q"/>
                                             <constraint firstItem="48W-uJ-Ldc" firstAttribute="centerX" secondItem="x3P-QZ-hly" secondAttribute="centerX" id="S5o-Rk-Wsw"/>
                                             <constraint firstItem="mwo-QC-WVm" firstAttribute="leading" secondItem="x3P-QZ-hly" secondAttribute="leading" constant="16" id="Sfz-gw-BCo"/>
                                             <constraint firstAttribute="trailing" secondItem="mwo-QC-WVm" secondAttribute="trailing" constant="16" id="TRh-Eq-LKK"/>
+                                            <constraint firstItem="gyY-rA-EdF" firstAttribute="top" secondItem="HBt-O4-bE4" secondAttribute="bottom" constant="8" id="UCN-CR-fH6"/>
                                             <constraint firstItem="PMw-CQ-RB4" firstAttribute="centerX" secondItem="x3P-QZ-hly" secondAttribute="centerX" id="UE2-mq-7fM"/>
                                             <constraint firstItem="HBt-O4-bE4" firstAttribute="top" secondItem="48W-uJ-Ldc" secondAttribute="bottom" constant="8" id="V3H-2S-fhU"/>
                                             <constraint firstAttribute="trailing" secondItem="ZhK-cI-Eqf" secondAttribute="trailing" constant="16" id="a3m-bR-hqZ"/>
                                             <constraint firstItem="mwo-QC-WVm" firstAttribute="top" secondItem="BUD-N1-42o" secondAttribute="bottom" constant="8" id="a9t-d0-S6a"/>
                                             <constraint firstItem="ZhK-cI-Eqf" firstAttribute="top" secondItem="mwo-QC-WVm" secondAttribute="bottom" constant="8" id="ajF-8x-P9D"/>
+                                            <constraint firstItem="gyY-rA-EdF" firstAttribute="centerX" secondItem="x3P-QZ-hly" secondAttribute="centerX" id="cwM-8b-zfG"/>
                                             <constraint firstItem="VAu-gl-JEi" firstAttribute="centerX" secondItem="x3P-QZ-hly" secondAttribute="centerX" id="fx1-u0-2eE"/>
                                             <constraint firstAttribute="trailing" secondItem="a86-lK-Nc6" secondAttribute="trailing" constant="16" id="hTr-Bn-OZH"/>
                                             <constraint firstItem="BUD-N1-42o" firstAttribute="leading" secondItem="x3P-QZ-hly" secondAttribute="leading" constant="16" id="htH-6T-DYv"/>
@@ -502,6 +500,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="cvn-z8-jv4"/>
                     <connections>
+                        <outlet property="addToWishlistButton" destination="gyY-rA-EdF" id="OhJ-0F-BPJ"/>
                         <outlet property="coverImageView" destination="CBA-tW-GWD" id="k6x-0x-zjv"/>
                         <outlet property="issueNumberTextField" destination="ZhK-cI-Eqf" id="wwH-8l-kru"/>
                         <outlet property="keyIssueSwitch" destination="V8k-oG-TLK" id="9mS-gR-BsZ"/>
@@ -515,7 +514,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cam-Kn-gKg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3149" y="-2063"/>
+            <point key="canvasLocation" x="3097" y="-1668"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="FvC-UZ-6Gk">
@@ -527,11 +526,11 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <segue destination="vV4-Ek-LkS" kind="relationship" relationship="viewControllers" id="16Q-9F-iiH"/>
+                        <segue destination="A46-wK-2Cp" kind="relationship" relationship="viewControllers" id="d6o-8L-rJR"/>
                         <segue destination="ycT-Dj-9rA" kind="relationship" relationship="viewControllers" id="sN7-LO-dsi"/>
-                        <segue destination="uSC-bV-fm9" kind="relationship" relationship="viewControllers" id="DN2-YW-7Oh"/>
                         <segue destination="evX-zD-alN" kind="relationship" relationship="viewControllers" id="ITP-wC-jHx"/>
                         <segue destination="2Yp-JS-iVk" kind="relationship" relationship="viewControllers" id="dR5-tC-t0Z"/>
-                        <segue destination="vV4-Ek-LkS" kind="relationship" relationship="viewControllers" id="16Q-9F-iiH"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zIa-sz-BFj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -556,25 +555,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8a-o6-JV4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1173" y="-290"/>
-        </scene>
-        <!--Wishlist-->
-        <scene sceneID="E6x-O7-Zuk">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uSC-bV-fm9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Wishlist" image="dollarsign.circle.fill" catalog="system" id="2nd-NG-9nl"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xy2-d6-DNg">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="iy1-Uh-4VY" kind="relationship" relationship="rootViewController" id="500-wj-CfK"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="79b-9g-2Wk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1173" y="-981"/>
         </scene>
         <!--Statistics-->
         <scene sceneID="99g-TL-zuI">
@@ -633,12 +613,95 @@
             </objects>
             <point key="canvasLocation" x="1172" y="-1668"/>
         </scene>
+        <!--Wishlist Collection View Controller-->
+        <scene sceneID="FNS-w5-eaN">
+            <objects>
+                <collectionViewController storyboardIdentifier="WishlistCollectionViewController" id="Orw-Ii-cdP" customClass="WishlistCollectionViewController" customModule="ComicKeep" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="te4-Rj-T9b">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="A5D-oK-5oi">
+                            <size key="itemSize" width="131" height="210"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ComicCell" id="tcA-Qa-csa" customClass="ComicCollectionViewCell" customModule="ComicKeep" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="131" height="210"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="zad-Xy-UnR">
+                                    <rect key="frame" x="0.0" y="0.0" width="131" height="210"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e34-7f-Icn">
+                                            <rect key="frame" x="0.0" y="0.0" width="131" height="210"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="e34-7f-Icn" secondAttribute="height" multiplier="131:210" id="tmG-Ja-Xbl"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBN-Vo-gML">
+                                            <rect key="frame" x="5" y="8" width="126" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" name="PrimaryTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="e34-7f-Icn" firstAttribute="top" secondItem="zad-Xy-UnR" secondAttribute="top" id="0dq-xz-9HT"/>
+                                        <constraint firstAttribute="trailing" secondItem="e34-7f-Icn" secondAttribute="trailing" id="9pL-9R-ujm"/>
+                                        <constraint firstItem="e34-7f-Icn" firstAttribute="leading" secondItem="zad-Xy-UnR" secondAttribute="leading" id="B2E-qa-QGv"/>
+                                        <constraint firstItem="aBN-Vo-gML" firstAttribute="top" secondItem="zad-Xy-UnR" secondAttribute="top" constant="8" id="P7f-3r-RyE"/>
+                                        <constraint firstAttribute="trailing" secondItem="aBN-Vo-gML" secondAttribute="trailing" id="XMA-C7-95d"/>
+                                        <constraint firstItem="aBN-Vo-gML" firstAttribute="leading" secondItem="zad-Xy-UnR" secondAttribute="leading" constant="5" id="uMG-uB-NDi"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="131" height="210"/>
+                                <connections>
+                                    <outlet property="comicImageView" destination="e34-7f-Icn" id="X5f-GC-c8u"/>
+                                    <outlet property="comicTitleLabel" destination="aBN-Vo-gML" id="sts-OH-ZKc"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Orw-Ii-cdP" id="M5W-OO-1kU"/>
+                            <outlet property="delegate" destination="Orw-Ii-cdP" id="GEW-8I-pMD"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="wNJ-su-cL8">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="oJb-g8-Vh6"/>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9CJ-OV-wam" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2100" y="-981"/>
+        </scene>
+        <!--Wishlist-->
+        <scene sceneID="HTH-RH-m7n">
+            <objects>
+                <navigationController title="Wishlist" automaticallyAdjustsScrollViewInsets="NO" id="A46-wK-2Cp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Wishlist" image="heart.fill" catalog="system" id="pva-u8-09g"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JIK-5K-HZO">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Orw-Ii-cdP" kind="relationship" relationship="rootViewController" id="uvR-ju-Bq5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PHe-fJ-RFC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1173" y="-981"/>
+        </scene>
     </scenes>
     <resources>
         <image name="books.vertical.fill" catalog="system" width="128" height="110"/>
         <image name="chart.xyaxis.line" catalog="system" width="128" height="102"/>
-        <image name="dollarsign.circle.fill" catalog="system" width="128" height="123"/>
         <image name="gearshape.fill" catalog="system" width="128" height="123"/>
+        <image name="heart.fill" catalog="system" width="128" height="107"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="placeholder" width="374" height="463"/>
         <namedColor name="AccentColor">

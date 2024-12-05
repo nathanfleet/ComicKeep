@@ -17,6 +17,7 @@ class AddComicViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var selectImageButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var addToWishlistButton: UIButton!
     
     var selectedImageData: Data?
     
@@ -64,6 +65,35 @@ class AddComicViewController: UIViewController, UIImagePickerControllerDelegate,
             price: price
         )
 
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func addToWishlistButtonTapped(_ sender: UIButton) {
+        guard let title = titleTextField.text, !title.isEmpty,
+              let issueNumberText = issueNumberTextField.text, !issueNumberText.isEmpty,
+              let issueNumber = Int16(issueNumberText) else {
+            showAlert(message: "Please enter a title and issue number.")
+            return
+        }
+
+        let notes = notesTextView.text
+        let variant = variantSwitch.isOn
+        let keyIssue = keyIssueSwitch.isOn
+        let price = Double(priceTextField.text ?? "") ?? 0.0
+        let coverImage = selectedImageData
+        
+        CoreDataManager.shared.createComic(
+            title: title,
+            issueNumber: issueNumber,
+            notes: notes,
+            variant: variant,
+            keyIssue: keyIssue,
+            coverImage: coverImage,
+            acquired: false,
+            price: price,
+            wishlist: true
+        )
+        
         navigationController?.popViewController(animated: true)
     }
     
