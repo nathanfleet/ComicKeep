@@ -23,6 +23,17 @@ class StatisticsViewController: UIViewController {
         updateChartData()
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(applyAppearanceSettings), name: NSNotification.Name("AppearanceDidChange"), object: nil)
+    }
+    
+    @objc func applyAppearanceSettings() {
+        let isDarkModeEnabled = UserDefaults.standard.bool(forKey: "DarkModeEnabled")
+        overrideUserInterfaceStyle = isDarkModeEnabled ? .dark : .light
+    }
+    
     func updateTotalValue() {
         let total = comics.reduce(0.0) { sum, comic in
             let priceDouble = comic.price?.doubleValue ?? 0.0

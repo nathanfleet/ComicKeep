@@ -35,6 +35,13 @@ class WishlistCollectionViewController: UICollectionViewController, UICollection
             flowLayout.minimumLineSpacing = minimumLineSpacing
             flowLayout.estimatedItemSize = .zero
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(applyAppearanceSettings), name: NSNotification.Name("AppearanceDidChange"), object: nil)
+    }
+    
+    @objc func applyAppearanceSettings() {
+        let isDarkModeEnabled = UserDefaults.standard.bool(forKey: "DarkModeEnabled")
+        overrideUserInterfaceStyle = isDarkModeEnabled ? .dark : .light
     }
 
     // Delegate
