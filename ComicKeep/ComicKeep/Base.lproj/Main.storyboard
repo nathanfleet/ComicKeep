@@ -124,10 +124,42 @@
                     <view key="view" contentMode="scaleToFill" id="Fpa-jV-9cq">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mli-aJ-Rip">
+                                <rect key="frame" x="116" y="75" width="161" height="47"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="40"/>
+                                <color key="textColor" name="PrimaryTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark Mode" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyi-FF-Fb5">
+                                <rect key="frame" x="105" y="405.66666666666669" width="183" height="41"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="35"/>
+                                <color key="textColor" name="PrimaryTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zhp-LB-qFM">
+                                <rect key="frame" x="172" y="456.66666666666669" width="51" height="31"/>
+                                <color key="onTintColor" name="SecondColor"/>
+                                <connections>
+                                    <action selector="darkModeSwitchToggled:" destination="7KU-dq-hH5" eventType="valueChanged" id="6sf-kV-36d"/>
+                                </connections>
+                            </switch>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="A38-hV-BQF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zhp-LB-qFM" firstAttribute="top" secondItem="fyi-FF-Fb5" secondAttribute="bottom" constant="10" id="5ql-QG-Yej"/>
+                            <constraint firstItem="fyi-FF-Fb5" firstAttribute="centerX" secondItem="Fpa-jV-9cq" secondAttribute="centerX" id="JmR-Rv-zE6"/>
+                            <constraint firstItem="mli-aJ-Rip" firstAttribute="centerX" secondItem="Fpa-jV-9cq" secondAttribute="centerX" id="MkJ-2Q-j5R"/>
+                            <constraint firstItem="fyi-FF-Fb5" firstAttribute="centerY" secondItem="Fpa-jV-9cq" secondAttribute="centerY" id="n2m-cS-TYo"/>
+                            <constraint firstItem="mli-aJ-Rip" firstAttribute="top" secondItem="Fpa-jV-9cq" secondAttribute="top" constant="75" id="nxM-mh-rtl"/>
+                            <constraint firstItem="zhp-LB-qFM" firstAttribute="centerX" secondItem="Fpa-jV-9cq" secondAttribute="centerX" id="xXr-63-K68"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9Jf-ou-vDa"/>
+                    <connections>
+                        <outlet property="darkModeSwitch" destination="zhp-LB-qFM" id="Dox-Bx-DWC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="db1-5X-gVM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -567,6 +599,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" name="AccentColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="vV4-Ek-LkS" kind="relationship" relationship="viewControllers" id="16Q-9F-iiH"/>
@@ -712,9 +745,7 @@
                             <outlet property="delegate" destination="Orw-Ii-cdP" id="GEW-8I-pMD"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="wNJ-su-cL8">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="oJb-g8-Vh6"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="wNJ-su-cL8"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9CJ-OV-wam" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
