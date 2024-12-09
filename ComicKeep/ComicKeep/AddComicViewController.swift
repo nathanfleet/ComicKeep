@@ -18,6 +18,7 @@ class AddComicViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var selectImageButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var addToWishlistButton: UIButton!
+    @IBOutlet weak var takePhotoButton: UIButton!
     
     var selectedImageData: Data?
     
@@ -45,6 +46,23 @@ class AddComicViewController: UIViewController, UIImagePickerControllerDelegate,
             selectedImageData = image.jpegData(compressionQuality: 0.8)
         }
         picker.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func takePhotoButtonPressed(_ sender: UIButton) {
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+            let alert = UIAlertController(title: "Camera Unavailable",
+                                          message: "This device does not have a camera or the camera is not accessible.",
+                                          preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            present(alert, animated: true)
+            return
+        }
+
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .camera
+        imagePicker.cameraCaptureMode = .photo
+        present(imagePicker, animated: true, completion: nil)
     }
     
     @IBAction func saveButtonTapped(_ sender: UIButton) {

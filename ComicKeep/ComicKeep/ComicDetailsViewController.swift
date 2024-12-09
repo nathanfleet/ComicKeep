@@ -16,6 +16,7 @@ class ComicDetailsViewController: UIViewController {
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var notesTextView: UITextView!
     @IBOutlet weak var editNotesButton: UIButton!
+    @IBOutlet weak var removeComicButton: UIButton!
     
     var comic: Comic?
 
@@ -46,6 +47,20 @@ class ComicDetailsViewController: UIViewController {
         }
     }
     
+    func removeCurrentComic() {
+        guard let comic = comic else { return }
+        let success = CoreDataManager.shared.deleteComic(comic: comic)
+        if success {
+            navigationController?.popViewController(animated: true)
+        } else {
+            let alert = UIAlertController(title: "Error",
+                                          message: "Failed to remove comic.",
+                                          preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            present(alert, animated: true)
+        }
+    }
+    
     @IBAction func editNotesButtonPressed(_ sender: UIButton) {
         let alert = UIAlertController(title: "Edit Notes",
                                               message: "Update your notes for this comic.",
@@ -65,4 +80,14 @@ class ComicDetailsViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    @IBAction func removeComicButtonPressed(_ sender: UIButton) {
+        guard let comic = comic else { return }
+
+        let alert = UIAlertController(title: "Remove Comic", message: "Are you sure you want to remove \(comic.title ?? "this comic")?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Remove", style: .destructive, handler: { [weak self] _ in
+            self?.removeCurrentComic()
+        }))
+        present(alert, animated: true)
+    }
 }
