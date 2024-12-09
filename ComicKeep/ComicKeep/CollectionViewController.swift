@@ -36,6 +36,9 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         }
         
         NotificationCenter.default.addObserver(self, selector: #selector(applyAppearanceSettings), name: NSNotification.Name("AppearanceDidChange"), object: nil)
+        
+        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(_:)))
+        collectionView.addGestureRecognizer(longPressGesture)
     }
     
     @objc func applyAppearanceSettings() {
@@ -85,6 +88,25 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         return CGSize(width: itemWidth, height: itemHeight)
     }
     
+    // MARK: Gesture Recognizer (For Project Requirement)
+    @objc func handleLongPress(_ gesture: UILongPressGestureRecognizer) {
+        if gesture.state == .began {
+            let point = gesture.location(in: collectionView)
+            if let indexPath = collectionView.indexPathForItem(at: point) {
+                let selectedComic = comics[indexPath.item]
+
+                let alert = UIAlertController(title: "Remove Comic",
+                                              message: "Do you want to remove \(selectedComic.title ?? "this comic") from your collection?",
+                                              preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                alert.addAction(UIAlertAction(title: "Remove", style: .destructive, handler: { [weak self] _ in
+                    self?.removeComic(selectedComic, at: indexPath)
+                }))
+                present(alert, animated: true)
+            }
+        }
+    }
+
     // MARK: Data methods
     func fetchComics() {
         if let fetchedComics = CoreDataManager.shared.fetchComics(acquired: true, wishlist: false) {
@@ -92,6 +114,20 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
             collectionView.reloadData()
         } else {
             print("No comics found.")
+        }
+    }
+    
+    func removeComic(_ comic: Comic, at indexPath: IndexPath) {
+        let success = CoreDataManager.shared.deleteComic(comic: comic)
+        if success {
+            comics.remove(at: indexPath.item)
+            collectionView.deleteItems(at: [indexPath])
+        } else {
+            let alert = UIAlertController(title: "Error",
+                                          message: "Failed to remove comic.",
+                                          preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            present(alert, animated: true)
         }
     }
 }

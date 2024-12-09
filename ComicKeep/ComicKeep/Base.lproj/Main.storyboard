@@ -302,10 +302,10 @@
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pIn-Ot-aaO">
-                                <rect key="frame" x="16" y="556" width="361" height="160"/>
+                                <rect key="frame" x="16" y="556" width="361" height="80"/>
                                 <color key="backgroundColor" name="FirstColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="MaM-7l-rg0"/>
+                                    <constraint firstAttribute="height" constant="80" id="MaM-7l-rg0"/>
                                 </constraints>
                                 <color key="textColor" name="PrimaryTextColor"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
@@ -318,7 +318,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOd-vP-NwA">
-                                <rect key="frame" x="167" y="724" width="59" height="35"/>
+                                <rect key="frame" x="167" y="644" width="59" height="35"/>
                                 <color key="tintColor" name="SecondColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Edit">
@@ -328,14 +328,28 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="editNotesButtonPressed:" destination="Ngp-j4-4f4" eventType="touchUpInside" id="o5t-Te-WVF"/>
-                                    <action selector="selectImageButtonTapped:" destination="lfe-PO-EQZ" eventType="touchUpInside" id="8Lb-7s-7ET"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJL-3w-A0A">
+                                <rect key="frame" x="119" y="687" width="155" height="35"/>
+                                <color key="tintColor" name="SecondColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Remove Comic">
+                                    <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
+                                    <color key="baseForegroundColor" name="PrimaryTextColor"/>
+                                    <color key="baseBackgroundColor" name="FirstColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="removeComicButtonPressed:" destination="Ngp-j4-4f4" eventType="touchUpInside" id="iIe-1Y-xJ4"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="E6K-k5-2W2"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="HJL-3w-A0A" firstAttribute="top" secondItem="hOd-vP-NwA" secondAttribute="bottom" constant="8" id="1xf-88-xYL"/>
                             <constraint firstItem="E6K-k5-2W2" firstAttribute="trailing" secondItem="RAt-Ks-7ip" secondAttribute="trailing" constant="16" id="2OG-Nn-oRu"/>
+                            <constraint firstItem="HJL-3w-A0A" firstAttribute="centerX" secondItem="FTW-nJ-yOU" secondAttribute="centerX" id="5Ff-vK-QLf"/>
                             <constraint firstItem="Uxa-C6-LCM" firstAttribute="top" secondItem="60K-go-95w" secondAttribute="bottom" constant="8" id="7dv-jf-A6i"/>
                             <constraint firstItem="DNy-jt-tct" firstAttribute="top" secondItem="E6K-k5-2W2" secondAttribute="top" constant="16" id="8Ng-sd-3FH"/>
                             <constraint firstItem="E6K-k5-2W2" firstAttribute="trailing" secondItem="u7k-0H-NVP" secondAttribute="trailing" constant="16" id="9tR-SB-UU1"/>
@@ -371,6 +385,7 @@
                         <outlet property="keyIssueLabel" destination="RAt-Ks-7ip" id="EoS-nM-BMJ"/>
                         <outlet property="notesTextView" destination="pIn-Ot-aaO" id="Kd5-1w-ueY"/>
                         <outlet property="priceLabel" destination="Uxa-C6-LCM" id="ATs-gm-Sq1"/>
+                        <outlet property="removeComicButton" destination="HJL-3w-A0A" id="6TW-Mc-DU5"/>
                         <outlet property="titleLabel" destination="u7k-0H-NVP" id="Yca-ET-2KR"/>
                         <outlet property="variantLabel" destination="Smh-Dd-RRl" id="VZd-uV-LxD"/>
                     </connections>
@@ -519,6 +534,18 @@
                                                     <action selector="addToWishlistButtonTapped:" destination="lfe-PO-EQZ" eventType="touchUpInside" id="CD5-j7-U9J"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKV-ov-gEE">
+                                                <rect key="frame" x="273.33333333333331" y="777" width="56" height="35"/>
+                                                <color key="tintColor" name="SecondColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" image="camera.fill" catalog="system">
+                                                    <color key="baseForegroundColor" name="AccentColor"/>
+                                                    <color key="baseBackgroundColor" name="SecondColor"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="takePhotoButtonPressed:" destination="lfe-PO-EQZ" eventType="touchUpInside" id="wCp-NE-8oO"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" name="BackgroundColor"/>
                                         <constraints>
@@ -535,11 +562,13 @@
                                             <constraint firstItem="9yf-gd-eod" firstAttribute="centerX" secondItem="x3P-QZ-hly" secondAttribute="centerX" id="Exk-H3-vCS"/>
                                             <constraint firstAttribute="trailing" secondItem="hlG-5S-OP5" secondAttribute="trailing" constant="16" id="Fjm-76-bs7"/>
                                             <constraint firstItem="ZhK-cI-Eqf" firstAttribute="leading" secondItem="x3P-QZ-hly" secondAttribute="leading" constant="16" id="Fz0-de-NRo"/>
+                                            <constraint firstItem="fKV-ov-gEE" firstAttribute="top" secondItem="hPw-JI-kcJ" secondAttribute="bottom" constant="226" id="GNz-TL-wub"/>
                                             <constraint firstItem="BUD-N1-42o" firstAttribute="top" secondItem="a86-lK-Nc6" secondAttribute="bottom" constant="8" id="GfX-qM-gaU"/>
                                             <constraint firstItem="RHY-oL-kRK" firstAttribute="top" secondItem="V8k-oG-TLK" secondAttribute="bottom" constant="8" id="JKl-WM-DEY"/>
                                             <constraint firstItem="hlG-5S-OP5" firstAttribute="top" secondItem="ZhK-cI-Eqf" secondAttribute="bottom" constant="8" id="KpO-68-MMw"/>
                                             <constraint firstItem="VAu-gl-JEi" firstAttribute="top" secondItem="cDu-U9-1fn" secondAttribute="bottom" constant="8" id="L9Y-G9-rml"/>
                                             <constraint firstItem="HBt-O4-bE4" firstAttribute="centerX" secondItem="x3P-QZ-hly" secondAttribute="centerX" id="Ljv-ki-bfp"/>
+                                            <constraint firstItem="fKV-ov-gEE" firstAttribute="leading" secondItem="48W-uJ-Ldc" secondAttribute="trailing" constant="8" id="Mr7-yC-fhh"/>
                                             <constraint firstItem="hPw-JI-kcJ" firstAttribute="top" secondItem="RHY-oL-kRK" secondAttribute="bottom" constant="8" id="N4E-FR-ZK1"/>
                                             <constraint firstAttribute="trailing" secondItem="BUD-N1-42o" secondAttribute="trailing" constant="16" id="NZc-sS-hIP"/>
                                             <constraint firstItem="a86-lK-Nc6" firstAttribute="top" secondItem="x3P-QZ-hly" secondAttribute="top" constant="43" id="Naw-Ku-glG"/>
@@ -554,6 +583,7 @@
                                             <constraint firstItem="HBt-O4-bE4" firstAttribute="top" secondItem="48W-uJ-Ldc" secondAttribute="bottom" constant="8" id="V3H-2S-fhU"/>
                                             <constraint firstAttribute="trailing" secondItem="ZhK-cI-Eqf" secondAttribute="trailing" constant="16" id="a3m-bR-hqZ"/>
                                             <constraint firstItem="mwo-QC-WVm" firstAttribute="top" secondItem="BUD-N1-42o" secondAttribute="bottom" constant="8" id="a9t-d0-S6a"/>
+                                            <constraint firstAttribute="trailing" secondItem="fKV-ov-gEE" secondAttribute="trailing" constant="63.670000000000002" id="aMm-VH-RkK"/>
                                             <constraint firstItem="ZhK-cI-Eqf" firstAttribute="top" secondItem="mwo-QC-WVm" secondAttribute="bottom" constant="8" id="ajF-8x-P9D"/>
                                             <constraint firstItem="gyY-rA-EdF" firstAttribute="centerX" secondItem="x3P-QZ-hly" secondAttribute="centerX" id="cwM-8b-zfG"/>
                                             <constraint firstItem="VAu-gl-JEi" firstAttribute="centerX" secondItem="x3P-QZ-hly" secondAttribute="centerX" id="fx1-u0-2eE"/>
@@ -599,6 +629,7 @@
                         <outlet property="priceTextField" destination="hPw-JI-kcJ" id="0gm-iF-fCx"/>
                         <outlet property="saveButton" destination="HBt-O4-bE4" id="zvI-HM-DLS"/>
                         <outlet property="selectImageButton" destination="48W-uJ-Ldc" id="qZa-yz-m5F"/>
+                        <outlet property="takePhotoButton" destination="fKV-ov-gEE" id="zZr-Q7-86g"/>
                         <outlet property="titleTextField" destination="BUD-N1-42o" id="YZg-v9-zwZ"/>
                         <outlet property="variantSwitch" destination="cDu-U9-1fn" id="Qf9-eS-XT7"/>
                     </connections>
@@ -789,6 +820,7 @@
     </scenes>
     <resources>
         <image name="books.vertical.fill" catalog="system" width="128" height="110"/>
+        <image name="camera.fill" catalog="system" width="128" height="93"/>
         <image name="chart.xyaxis.line" catalog="system" width="128" height="102"/>
         <image name="gearshape.fill" catalog="system" width="128" height="123"/>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
