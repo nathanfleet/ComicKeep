@@ -51,7 +51,6 @@ class WishlistCollectionViewController: UICollectionViewController, UICollection
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedComic = wishlistComics[indexPath.item]
         
-        // Allow user to move selected comic to their collection
         let alert = UIAlertController (
             title: "Move to Collection",
             message: "Would you like to Move \(selectedComic.title ?? "this comic") to your collection?",

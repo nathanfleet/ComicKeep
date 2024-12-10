@@ -80,7 +80,7 @@ class StatisticsViewController: UIViewController {
     
     // MARK: Data Methods
     func fetchComics() {
-        if let fetched = CoreDataManager.shared.fetchComics() {
+        if let fetched = CoreDataManager.shared.fetchComics(acquired: true, wishlist: false) {
             comics = fetched
         } else {
             comics = []

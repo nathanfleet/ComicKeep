@@ -1,6 +1,9 @@
 import SwiftUI
 import Charts
 
+import SwiftUI
+import Charts
+
 struct DailySpendingChart: View {
     let data: [Date: Double]
 

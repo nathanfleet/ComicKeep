@@ -88,7 +88,6 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         return CGSize(width: itemWidth, height: itemHeight)
     }
     
-    // MARK: Gesture Recognizer (For Project Requirement)
     @objc func handleLongPress(_ gesture: UILongPressGestureRecognizer) {
         if gesture.state == .began {
             let point = gesture.location(in: collectionView)
